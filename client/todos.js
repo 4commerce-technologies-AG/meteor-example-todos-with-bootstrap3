@@ -124,7 +124,7 @@ Template.lists.events(okCancelEvents(
   }));
 
 Template.lists.selected = function () {
-  return Session.equals('list_id', this._id) ? 'selected' : '';
+  return Session.equals('list_id', this._id) ? 'active' : '';
 };
 
 Template.lists.name_class = function () {
@@ -286,7 +286,7 @@ Template.tag_filter.tag_text = function () {
 };
 
 Template.tag_filter.selected = function () {
-  return Session.equals('tag_filter', this.tag) ? 'selected' : '';
+  return Session.equals('tag_filter', this.tag) ? 'active' : '';
 };
 
 Template.tag_filter.events({

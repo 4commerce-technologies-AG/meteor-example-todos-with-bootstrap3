@@ -1,263 +1,122 @@
-* {
-    padding: 0;
-    margin: 0;
+a:hover{
+	text-decoration: none;
 }
 
-ul {
-    list-style: none;
+#list-filter {
+	/*margin-bottom: 60px;*/
 }
 
-html, body {
-    height: 100%;
+#main-pane, #tag-filter, #tag-filter-small {
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
-body {
-    font-size: 16px;
-    line-height: 1.5;
-    background: #eeeeee;
-    color: #333333;
+#tag-filter-small {
+	padding: 0 15px;
 }
 
-body, input {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#tag-filter-small li {
+	list-style-type: none;
+	list-style-image: none;
+	display: inline;
+	margin: 0 20px 0 0;
+	line-height: 28px;
 }
 
-input {
-    font-size: 100%;
+#tag-filter-small a {
+	color: #999;
+	white-space: nowrap;
 }
 
-a, a:visited, a:active {
-    color: #258;
+#tag-filter-small a:hover,
+#tag-filter-small li.active a {
+	color: #428bca;
+	text-decoration: none;
 }
 
-h3 {
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 120%;
-    padding: 8px 6px;
-    text-align: center;
-}
-
-#top-tag-filter, #main-pane, #side-pane, #bottom-pane {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-}
-
-#top-tag-filter {
-    left: 200px;
-    height: 44px;
-    bottom: auto;
-    background: #ddd;
-    border-bottom: 1px solid #999;
-}
-
-#help {
-    padding: 8px;
-}
-
-#main-pane {
-    top: 45px;
-    bottom: 0;
-    left: 220px;
-    overflow: auto;
-}
-
-#side-pane {
-    width: 200px;
-    right: auto;
-    overflow: auto;
-    background: #eee;
-    border-right: 1px solid #999;
-    background: #ddd;
-}
-
-.tag {
-    cursor: pointer;
-    float: left;
-    margin: 5px;
-    padding: 2px 7px;
-    font-size: 80%;
-    font-weight: bold;
-    background: #999;
-    color: #fff;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-
-    opacity: 1;
-    transition: opacity 0.3s linear;
-    -moz-transition: opacity 0.3s linear;
-    -webkit-transition: opacity 0.3s linear;
-    -o-transition: opacity 0.3s linear;
-
-    position: relative;
-}
-
-#tag-filter .label {
-    float: left;
-    margin-top: 9px;
-    margin-left: 12px;
-    margin-right: 8px;
-}
-
-#tag-filter .tag {
-    margin-top: 10px;
-    border: 1px solid #777;
-}
-
-#tag-filter .selected {
-    background: #69d;
-}
-
-#tag-filter .count {
-    font-weight: normal;
-    padding-left: 2px;
-}
-
-#lists .list {
-    padding: 3px 6px;
-}
-
-#lists .selected {
-    padding: 2px 6px;
-    background: #9be;
-    font-weight: bold;
-}
-
-#lists .list-name {
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-}
-
-#createList {
-    padding: 3px 6px;
-    margin-top: 5px;
-}
-
-#createList input {
-    width: 180px;
+.count.badge {
+	float: right;
 }
 
 #new-todo-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 60px;
-    margin-right: 20px;
-    font-size: 160%;
-    position: relative;
-    height: 40px;
+	margin-bottom: 36px;
 }
 
-#new-todo {
-   position: absolute;
-   width: 100%;
+#new-todo-box .input-group-addon {
+	padding: 6px 11px;
 }
 
-#items-view {
-    margin-top: 5px;
-    margin-left: 5px;
+#item-list {
+	list-style-type: none;
+	list-style-image: none;
+	padding: 0;
 }
 
 #item-list .todo {
-    display: block;
-    height: 50px;
-    position: relative;
-    overflow: hidden;
-    border-top: 1px solid #ccc;
+	margin: 0 0 12px 0;
+	padding: 12px 0 0 0;
+	border-top: 1px solid #ccc;
 }
 
-#item-list .todo .destroy {
-    cursor: pointer;
-    position: absolute;
-    left: 5px;
-    top: 15px;
-    height: 20px;
-    width: 20px;
+#item-list .todo.done .form-control {
+	text-decoration: line-through;
 }
 
-#item-list .todo .display, #item-list .todo .edit {
-    margin-left: 30px;
-    height: 100%;
-    width: auto;
-    float: left;
-    padding-top: 18px;
-    line-height: 1;
+.item-tags {
+	text-align: right;
+	padding: 5px 15px 0 0;
 }
 
-#todo-input {
-    width: 300px;
-    position: relative;
-    top: -3px;
+.item-tags .tag {
+	font-weight: normal;
+	margin-left: 4px;
+	padding: 4px 2px 4px 5px;
+	background-color: transparent;
+	border: 1px solid #cccccc;
+	color: #666;
 }
 
-#item-list .done .todo-text {
-    text-decoration: line-through;
-    color: #999;
+.item-tags .tag .icon {
+	color: #aaa;
+	margin-right: 4px;
 }
 
-#item-list .todo:hover .destroy {
-    background: url('/destroy.png') no-repeat 0 0;
+.item-tags .tag .remove {
+	margin-left: 6px;
+	color: #999;
 }
 
-#item-list .todo .destroy:hover {
-    background-position: 0 -20px;
+.item-tags .tag .remove:hover {
+	color: #428bca;
 }
 
-#item-list .todo .item-tags {
-    overflow: auto;
-    float: right;
-    margin-right: 8px;
+.item-tags .addtag {
+	padding: 0 1px 0 0;
 }
 
-#item-list .todo .item-tags .tag {
-    margin-top: 15px;
+.item-tags .edittag input {
+	display: inline-block;
+	padding: 0;
+	border: 0;
+	text-align: left;
+	outline: none;
+	color: #666;
 }
 
-#item-list .todo .item-tags .removable_tag {
-    padding-right: 22px;
+.check {
+	color: #ccc;
 }
 
-#item-list .todo .item-tags .tag .remove {
-    position: absolute;
-    top: 0;
-    right: 4px;
-    bottom: 0;
-    width: 16px;
-    background: url("/close_16.png") no-repeat 0 center;
+.check:hover {
+	color: #666;
 }
 
-#item-list .todo .item-tags .tag .remove:hover {
-    background-position: -16px center;
+.check.done {
+	color: #5cb85c;
 }
 
-#item-list .todo .item-tags div.addtag {
-    background: none;
-    color: #333;
-    border: 1px dashed #999;
+.navbar-form .form-control {
+	height: 28px;
+	margin: 3px 0;
 }
-
-#item-list .todo .check {
-    float: left;
-    width: 25px;
-}
-
-#item-list .todo .todo-text {
-    float: left;
-    margin-left: 10px;
-    font-size: 100%;
-}
-
-#item-list .todo .edit input {
-    margin-left: 35px;
-}
-
-#edittag-input {
-    width: 80px;
-}
-
