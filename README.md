@@ -7,7 +7,7 @@ elements instead of _old-style_ web layout.
 Please checkout also smaller displays like phones and tablets for minimized
 menu layout.
 
-This app was done on meteor 0.6.5.1
+This app was done on meteor 0.8.1.3
 
 
 ## Live demo
